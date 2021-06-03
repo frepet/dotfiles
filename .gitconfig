@@ -1,0 +1,10 @@
+[user]
+	name = Fredrik Peteri
+	email = fredrik@peteri.se
+[push]
+	default = simple
+[alias]
+	logline = log --graph --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %C(yellow)%d%Creset' --abbrev-commit
+	ll = log --graph --pretty=format:'%Cred%h%Creset - %Cgreen(%cs) %Creset%s %C(bold blue)<%an>%Creset %C(yellow)%d%Creset' --abbrev-commit
+[pull]
+	rebase = true
