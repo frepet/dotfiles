@@ -24,16 +24,6 @@ endif
 call plug#begin('~/.vim/plugged')
 
 
-" Deoplete for better auto-complete
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
-
 " Ale for linting
 Plug 'dense-analysis/ale'
 
@@ -46,16 +36,6 @@ let g:airline#extensions#tabline#enabled = 1
 
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-
-" Use ALE as completion sources for all code.
-" call deoplete#custom#source('ale')
-
-"filetype off                  " required
-"set autoindent
-"set noexpandtab
-
-set tabstop=4
-set shiftwidth=4
 
 " Add recursive path
 set path+=**
@@ -82,18 +62,11 @@ highlight CursorLine ctermbg=238 cterm=none
 " Enable mouse movement
 set mouse=a
 
-" Fix non-transparent bg
-"highlight Normal ctermbg=Black
-"highlight NonText ctermbg=Black
-
 " Enable clipboard outside of vim
 set clipboard=unnamedplus
 
-"" Load plugin manager
-"execute pathogen#infect()
-"
-"
-"
-""Fix python indent
-autocmd FileType python setlocal tabstop=4 expandtab "noexpandtab
-
+" Just fix tabs instead of spaces
+set autoindent
+set noexpandtab
+set tabstop=4
+set shiftwidth=4
